@@ -146,7 +146,7 @@ Get Only Students
 
 .. code-block:: python
 
-    users = course.get_users(enrollment_type=['student'])
+    users = course.get_users(type=['StudentEnrollment'])
 
     for user in users:
         print(user)
@@ -156,9 +156,9 @@ Get Only Teachers, TAs, and Designers
 
 .. code-block:: python
 
-    type_list = ['teacher', 'ta', 'designer']
+    type_list = ['TeacherEnrollment', 'TaEnrollment', 'DesignerEnrollment']
 
-    users = course.get_users(enrollment_type=type_list)
+    users = course.get_users(type=type_list)
 
     for user in users:
         print(user)
@@ -169,8 +169,8 @@ Get Only Active and Invited Students And Teachers
 .. code-block:: python
 
     users = course.get_users(
-        enrollment_type=['teacher', 'student']
-        enrollment_state=['active', 'invited']
+        type=['TeacherEnrollment', 'StudentEnrollment']
+        state=['active', 'invited']
     )
 
     for user in users:
